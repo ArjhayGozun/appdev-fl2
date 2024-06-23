@@ -7,130 +7,112 @@
     <meta name="keywords" content="Sports news updates, Latest sports headlines, Sports statistics and results">
     <meta name="description" content="Explore comprehensive sports news covering the PBA, NCAA, and UAAP leagues in the Philippines. Stay updated with breaking headlines, in-depth analysis, player insights, and game results. Your go-to source for exclusive interviews, team updates, and passionate commentary on basketball and collegiate sports. Dive into the excitement of Philippine sports with our expert coverage.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <!-- google fonts -->
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500&display=swap" rel="stylesheet">
     <title>SportsBuzz</title>
+    <style type="text/tailwindcss">
+      body {
+          font-family: 'Inter', sans-serif;
+      }
+  </style>
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Text Color -->
+  <script>
+      tailwind.config = {
+          theme: {
+              container: {
+                  center: true,
+                  padding: '20px', 
+              },
+              extend: {
+                  colors: { 
+                  },
+                  fontFamily: {
+                      'sans': ['Plus Jakarta Sans'],
+                  },
+              }  
+          }
+      }
+  </script>
 </head>
 <body>
 <!-- ========== HEADER ========== -->
-<nav class="p-5 shadow md:flex md:items-center md:justify-between">
-  <div class="flex justify-between items-center">
-    <span class="text-2xl font-[Poppins] cursor-pointer">
-      <img class="h-10 inline" src="https://seeklogo.com/images/S/sb-logo-43138A1D73-seeklogo.com.png">
-      SportsBuzz
-    </span>
+    <!-- Navbar -->
+    <nav class="py-5 bg-white sticky top-0 border-b border-gray-100">
+      <div class="container md:px-12 md:flex md:items-center md:justify-between">
+          <div class="flex items-center justify-between">
+              <a href="#" class="flex items-center">
+                  <img src="https://seeklogo.com/images/S/sb-logo-43138A1D73-seeklogo.com.png" class="h-10 w-10 mr-3" alt="logo">
+                  <span class="text-2xl text-gray-900 font-sans font-bold">SportsBuzz</span>
+              </a>
+              <span class="block mx-2 text-3xl bg-gray-100 p-2 rounded-lg md:hidden">
+                  <svg name="menu" onclick="Menu(this)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>                      
+              </span>
+          </div>
+          <ul class="p-5 z-10 absolute bg-white/80 backdrop-blur w-full left-0 py-4 opacity-0 top-[-400px] transition-all ease-in duration-500 md:p-0 md:flex md:items-center md:space-x-8 md:static md:w-auto md:opacity-100">
+              <li class="md:my-0">
+                  <a href="#home" class="font-medium duration-500 text-gray-900 hover:text-indigo-600" aria-current="page">HOME</a>
+              </li>
+              <li class="my-6 md:my-0">
+                  <a href="pba.html" class="font-medium duration-500 text-gray-900 hover:text-indigo-600" aria-current="page">PBA</a>
+              </li>
+              <li class="my-6 md:my-0">
+                  <a href="#home" class="font-medium duration-500 text-gray-900 hover:text-indigo-600" aria-current="page">NCAA</a>
+              </li>
+              <li class="my-6 md:my-0">
+                  <a href="#home" class="font-medium duration-500 text-gray-900 hover:text-indigo-600" aria-current="page">UAAP</a>
+              </li>
+              <li class="my-6 md:my-0">
+                <a href="#home" class="font-medium duration-500 text-gray-900 hover:text-indigo-600" aria-current="page">PVL</a>
+              </li>
+              <li class="my-6 md:my-0">
+                <a href="#home" class="font-medium duration-500 text-gray-900 hover:text-indigo-600" aria-current="page">FIBA</a>
+              </li>
+              <li class="my-6 md:my-0">
+                <a href="#home" class="font-medium duration-500 text-gray-900 hover:text-indigo-600" aria-current="page">ESPORTS</a>
+              </li>
 
-     <span class="text-3xl cursor-pointer mx-2 md:hidden block">
-      <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-     </span>
-  </div>
+              <button type="button" class="w-full text-white bg-cyan-900 font-medium rounded-lg text-md px-3.5 py-3 text-center hover:bg-indigo-700 hover:drop-shadow-md transition duration-300 ease-in-out">Get started</button>
+          </ul>
+      </div>
+  </nav>
+  <!-- /Navbar -->
 
-  <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-gray w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
-    <li class="mx-4 my-6 md:my-0">
-      <a href="#" class="text-xl hover:text-cyan-500 duration-500">HOME</a>
-    </li>
-    <li class="mx-4 my-6 md:my-0">
-      <a href="#" class="text-xl hover:text-cyan-500 duration-500">PBA</a>
-    </li>
-    <li class="mx-4 my-6 md:my-0">
-      <a href="#" class="text-xl hover:text-cyan-500 duration-500">UAAP</a>
-    </li>
-    <li class="mx-4 my-6 md:my-0">
-      <a href="#" class="text-xl hover:text-cyan-500 duration-500">NCAA</a>
-    </li>
-    <li class="mx-4 my-6 md:my-0">
-      <a href="#" class="text-xl hover:text-cyan-500 duration-500">PVL</a>
-    </li>
-    <li class="mx-4 my-6 md:my-0">
-      <a href="#" class="text-xl hover:text-cyan-500 duration-500">MPBL</a>
-    </li>
-    <li class="mx-4 my-6 md:my-0">
-      <a href="#" class="text-xl hover:text-cyan-500 duration-500">MPL</a>
-    </li>
-    <li class="mx-4 my-6 md:my-0">
-      <a href="#" class="text-xl hover:text-cyan-500 duration-500">FIBA</a>
-    </li>
+  <!-- Home -->
+  <section id="home" class="py-5">
+      <div class="container flex flex-wrap items-center justify-center mx-auto mt-10 md:px-12 md:flex-row">
+          <div class="mb-14 lg:mb-0 lg:w-1/2">
+              <h1 class="max-w-xl text-[2.2rem] leading-none text-gray-900 font-extrabold font-sans text-center md:text-5xl lg:text-left lg:leading-tight mb-5">
+                Thea Gagate headlines 47-woman field for PVL Draft 
+              </h1>
+              <p class="max-w-xl text-center text-gray-500 lg:text-left lg:max-w-md">
+                The Premier Volleyball League (PVL) announced the initial class for the league’s inaugural Rookie Draft, which will take place on July 8, 2024, on Saturday morning.
+              </p>
+              <div class="flex justify-center mt-14 lg:justify-start">
+                  <button type="button" class="text-white bg-cyan-900 font-medium rounded-lg text-md px-5 py-4 text-center hover:bg-indigo-700 hover:drop-shadow-md transition duration-300 ease-in-out">Read more</button>
+              </div>
+          </div>
+          <div class="lg:w-1/2">
+              <img class="ml-auto" src="img/theag.jpg" alt="" />
+          </div>
+      </div>
+  </section>
+  <!-- /Home -->
 
-    <button class="bg-cyan-400 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-cyan-500 rounded">
-      Get started
-    </button>
-  </ul>
-</nav>
+  <script>
+      function Menu(e) {
+          let list = document.querySelector('ul');
 
-<script>
-  function Menu(e) {
-    let list = document.querySelector('ul');
-
-    e.name === 'menu' ? (e.name = "close" ,list.classList.
-    add('top-[80px]') , list.classList.add('opacity-100')
-    ) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
-  }
-</script>
+          e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100') ) : ( e.name = "menu" , list.classList.remove('top-[80px]'), list.classList.remove('opacity-100')) 
+      }
+  </script>
   <!-- ========== END HEADER ========== -->
-  
-  <!-- ========== MAIN CONTENT ========== -->
-  <main id="content">
-    <div class="max-w-[85rem] mx-auto pt-12 pb-10 px-4 sm:px-6 lg:px-8 md:pt-24">
-      <!-- your content goes here ... -->
-    </div>
-  </main>
-  <!-- ========== END MAIN CONTENT ========== -->
-
-<!-- Hero -->
-<div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Grid -->
-    <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
-      <div>
-        <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">Thea Gagate headlines 47-woman field for PVL Draft</h1>
-        <p class="mt-3 text-lg text-gray-800 dark:text-neutral-400">The Premier Volleyball League (PVL) announced the initial class for the league’s inaugural Rookie Draft, which will take place on July 8, 2024, on...</p>
-  
-        <!-- Buttons -->
-        <div class="mt-7 grid gap-3 w-full sm:inline-flex">
-          <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
-            UAAP
-          </a>
-        </div>
-        <!-- End Buttons -->
-      </div>
-      <!-- End Col -->
-  
-      <div class="relative ms-4">
-        <img class="w-full rounded-md" src="https://tiebreakertimes.com.ph/wp-content/uploads/2024/02/UAAP85-WVB-Thea-Gagate-7807297-1024x576.jpg" alt="Image Description">
-        <div class="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 size-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-neutral-800 dark:via-neutral-900/0 dark:to-neutral-900/0"></div>
-  
-        <!-- SVG-->
-        <div class="absolute bottom-0 start-0">
-          <svg class="w-2/3 ms-auto h-auto text-white dark:text-neutral-900" width="630" height="451" viewBox="0 0 630 451" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="531" y="352" width="99" height="99" fill="currentColor"/>
-            <rect x="140" y="352" width="106" height="99" fill="currentColor"/>
-            <rect x="482" y="402" width="64" height="49" fill="currentColor"/>
-            <rect x="433" y="402" width="63" height="49" fill="currentColor"/>
-            <rect x="384" y="352" width="49" height="50" fill="currentColor"/>
-            <rect x="531" y="328" width="50" height="50" fill="currentColor"/>
-            <rect x="99" y="303" width="49" height="58" fill="currentColor"/>
-            <rect x="99" y="352" width="49" height="50" fill="currentColor"/>
-            <rect x="99" y="392" width="49" height="59" fill="currentColor"/>
-            <rect x="44" y="402" width="66" height="49" fill="currentColor"/>
-            <rect x="234" y="402" width="62" height="49" fill="currentColor"/>
-            <rect x="334" y="303" width="50" height="49" fill="currentColor"/>
-            <rect x="581" width="49" height="49" fill="currentColor"/>
-            <rect x="581" width="49" height="64" fill="currentColor"/>
-            <rect x="482" y="123" width="49" height="49" fill="currentColor"/>
-            <rect x="507" y="124" width="49" height="24" fill="currentColor"/>
-            <rect x="531" y="49" width="99" height="99" fill="currentColor"/>
-          </svg>
-        </div>
-        <!-- End SVG-->
-      </div>
-      <!-- End Col -->
-    </div>
-    <!-- End Grid -->
-  </div>
-  <!-- End Hero -->
 
 <!-- Card Blog -->
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
@@ -141,20 +123,20 @@
     <!-- End Title -->
   
     <!-- Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 lg:mb-14">
+    <div class="py-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 lg:mb-14">
       <!-- Card -->
       <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800" href="#">
         <div class="aspect-w-16 aspect-h-9">
           <img class="w-full object-cover rounded-t-xl" src="img/fiba.jpg" alt="Image Description">
         </div>
         <div class="p-4 md:p-5">
-          <p class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400">
+          <p class="mt-2 text-xs uppercase text-cyan-900 dark:text-neutral-400">
             FIBA
           </p>
           <h3 class="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white">
             Remogat leads Gilas Men to first-ever stop title in FIBA 3×3 Nations League
-          </h3>
-          <p>Noy Remogat carried Gilas Pilipinas Men to their first-ever stop championship in the 2024 FIBA 3×3 Under-23 Nations League-Asia 2 conference on Saturday evening</p>
+          </h3><br>
+          <p class="max-w-xl text-center text-gray-500 lg:text-left lg:max-w-md">Noy Remogat carried Gilas Pilipinas Men to their first-ever stop championship in the 2024 FIBA 3×3 Under-23 Nations League-Asia 2 conference on Saturday evening</p>
         </div>
       </a>
       <!-- End Card -->
@@ -165,13 +147,13 @@
           <img class="w-full object-cover rounded-t-xl" src="img/pba.jpg" alt="Image Description">
         </div>
         <div class="p-4 md:p-5">
-          <p class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400">
+          <p class="mt-2 text-xs uppercase text-cyan-900 dark:text-neutral-400">
             PBA
           </p>
           <h3 class="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white">
             June Mar Fajardo contemplates return of protective mask
-          </h3>
-          <p>June Mar Fajardo is considering wearing his mask once more after getting inadvertently hit in the nose during San Miguel’s eventual defeat to Meralco</p>
+          </h3><br>
+          <p class="max-w-xl text-center text-gray-500 lg:text-left lg:max-w-md">June Mar Fajardo is considering wearing his mask once more after getting inadvertently hit in the nose during San Miguel’s eventual defeat to Meralco</p>
         </div>
       </a>
       <!-- End Card -->
@@ -182,13 +164,13 @@
           <img class="w-full object-cover rounded-t-xl" src="img/UAAPV.jpg" alt="Image Description">
         </div>
         <div class="p-4 md:p-5">
-          <p class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400">
+          <p class="mt-2 text-xs uppercase text-cyan-900 dark:text-neutral-400">
             UAAP
           </p>
           <h3 class="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white">
             Bella Belen, Alyssa Solomon skip PVL Draft, stay with NU Lady Bulldogs
-          </h3>
-          <p>Belen and Solomon played pivotal roles in helping NU secure its second championship in three seasons after sweeping the University of Santo Tomas in the UAAP Season 86 finals.</p>
+          </h3><br>
+          <p class="max-w-xl text-center text-gray-500 lg:text-left lg:max-w-md">Belen and Solomon played pivotal roles in helping NU secure its second championship in three seasons after sweeping the University of Santo Tomas in the UAAP Season 86 finals.</p>
         </div>
       </a>
       <!-- End Card -->
@@ -199,13 +181,13 @@
           <img class="w-full object-cover rounded-t-xl" src="img/esports.jpg" alt="Image Description">
         </div>
         <div class="p-4 md:p-5">
-          <p class="mt-2 text-xs uppercase text-gray-600 dark:text-neutral-400">
+          <p class="mt-2 text-xs uppercase text-cyan-900 dark:text-neutral-400">
             ESPORTS
           </p>
           <h3 class="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white">
             KarlTzy driven by desire to silence critics of ‘dad’ Jaypee in championship run
-          </h3>
-          <p>Karl “KarlTzy” Nepomuceno just added another accolade to his ever-impressive resume as he bagged his third MPL Philippines championship and looks to seize his first-ever MLBB Mid-Season Cup title in July.</p>
+          </h3><br>
+          <p class="max-w-xl text-center text-gray-500 lg:text-left lg:max-w-md">Karl “KarlTzy” Nepomuceno just added another accolade to his ever-impressive resume as he bagged his third MPL Philippines championship and looks to seize his first-ever MLBB Mid-Season Cup title in July.</p>
         </div>
       </a>
       <!-- End Card -->
@@ -232,7 +214,7 @@
             <p class="mt-3 text-gray-600 dark:text-neutral-400">
               Sanford leads ECHO to victory, wins Finals MVP, and vindicates his prime status
             </p>
-            <p class="mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline font-medium">
+            <p class="mt-4 inline-flex items-center gap-x-1 text-cyan-900 decoration-2 hover:underline font-medium">
             Read more
               <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </p>
@@ -255,7 +237,7 @@
             <p class="mt-3 text-gray-600 dark:text-neutral-400">
               Katherine Bell returns, joins Chery Tiggo for PVL Reinforced Conference
             </p>
-            <p class="mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline font-medium">
+            <p class="mt-4 inline-flex items-center gap-x-1 text-cyan-900 decoration-2 hover:underline font-medium">
               Read more
               <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </p>
@@ -278,7 +260,7 @@
             <p class="mt-3 text-gray-600 dark:text-neutral-400">
               Allein Maliksi turns negative write-ups into inspiration for stellar Game 5 show
             </p>
-            <p class="mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline font-medium">
+            <p class="mt-4 inline-flex items-center gap-x-1 text-cyan-900 decoration-2 hover:underline font-medium">
               Read more
               <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </p>
@@ -301,7 +283,7 @@
             <p class="mt-3 text-gray-600 dark:text-neutral-400">
               UP seals second consecutive Filoil crown against La Salle
             </p>
-            <p class="mt-4 inline-flex items-center gap-x-1 text-blue-600 decoration-2 hover:underline font-medium">
+            <p class="mt-4 inline-flex items-center gap-x-1 text-cyan-900 decoration-2 hover:underline font-medium">
               Read more
               <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </p>
